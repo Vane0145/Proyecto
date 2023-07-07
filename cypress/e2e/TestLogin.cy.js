@@ -44,7 +44,7 @@ describe("Automation Proyect", () => {
         cy.location("pathname").should("eq","/inventory.html")
       })
     })
-
+    
     
   })
 
