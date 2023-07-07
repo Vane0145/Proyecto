@@ -18,7 +18,7 @@ describe("Automation Proyect", () => {
         homePage.TypeEmailInput(data.emptyEmail)
         cy.getByData("login-button").click()
         homePage.TypePasswordInput(data.Password)
-        cy.getByData("error").should("exist")
+        cy.getByData("error").should("contain.text","Epic sadface: Username is required")
         console.log(data.Password)
         console.log(data.emptyEmail)
 
@@ -31,12 +31,12 @@ describe("Automation Proyect", () => {
         homePage.TypeEmail(data.email)
         homePage.TypePasswordInput(data.WrongPassword)
         cy.getByData("login-button").click()
-        cy.getByData("error").should("exist")
+        cy.getByData("error").should("contain.text","Epic sadface: Username and password do not match any user in this service" )
       })
       
     })
 
-    it("Login exitoso (standard_user)", () => {
+    it("Login exitoso ", () => {
       cy.get("@data").then((data) => {
         homePage.TypeEmail(data.email)
         homePage.TypePasswordInput(data.Password)
