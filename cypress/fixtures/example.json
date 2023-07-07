@@ -2,5 +2,8 @@
   "emptyEmail": "        ",
   "Password": "secret_sauce",
   "email": "standard_user",
-  "WrongPassword" : "stan_user"
+  "WrongPassword" : "stan_user",
+  "LockoutUser" : "locked_out_user"
+
+
 }

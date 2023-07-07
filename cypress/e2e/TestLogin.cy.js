@@ -44,7 +44,16 @@ describe("Automation Proyect", () => {
         cy.location("pathname").should("eq","/inventory.html")
       })
     })
-    
+
+    it("Login bloqueado ", () => {
+      cy.get("@data").then((data) => {
+        homePage.TypeEmail(data.LockoutUser)
+        homePage.TypePasswordInput(data.Password)
+        cy.getByData("login-button").click()
+        cy.getByData("error").should("contain.text","Epic sadface: Sorry, this user has been locked out." )
+      })
+      
+    })
     
   })
 
