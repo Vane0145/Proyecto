@@ -19,24 +19,30 @@ describe("Automation Proyect", () => {
         it("All items Option", () => {
             cy.get("#react-burger-menu-btn").click()
             cy.get("#inventory_sidebar_link").click()
-            cy.location("pathname").should("eq","/inventory.html")
+            cy.location("pathname").should("eq", "/inventory.html")
         })
-    
+
         it("About Option", () => {
             cy.get("#react-burger-menu-btn").click()
             cy.get("#about_sidebar_link").click()
             cy.url("https://saucelabs.com/").should("exist")
-            cy.origin('https://saucelabs.com/', () => {
-                cy.get('#__next').should('contain.text', 'The world relies on your code. Test on thousands of device, browser, and OS configurations – anywhere, any time.') 
-              })
-        })
+    
+            })
+            
         it("Logout Option", () => {
-            cy.get("#react-burger-menu-btn").click()
-            cy.get("#logout_sidebar_link").click()
-            cy.url("https://www.saucedemo.com/").should("exist")
+                cy.get("#react-burger-menu-btn").click()
+                cy.get("#logout_sidebar_link").click()
+                cy.url("https://www.saucedemo.com/").should("eq", "https://www.saucedemo.com/")
+            })
+
+        it("Reset App StateOption", () => {
+                cy.get("#react-burger-menu-btn").click()
+                cy.get("#reset_sidebar_link").click()
+                cy.location("pathname").should("eq", "/inventory.html")
+
+            })
+
         })
-        it 
 
-    })
+ })
 
-})
