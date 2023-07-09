@@ -50,8 +50,12 @@ describe("Automation Proyect", () => {
         it("BOTTON ADD TO CAR", ()=>{
             cy.get("[data-test=add-to-cart-sauce-labs-backpack]").should("be.enabled")
         })
-    
 
+        it.only("Botton BacktoProducst",()=>{
+            cy.get("#item_4_img_link").click()
+            cy.get("[data-test=back-to-products]").click()
+            cy.location("pathname").should("eq", "/inventory.html")
+        })
    })
 
 })
