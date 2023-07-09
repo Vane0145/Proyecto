@@ -27,7 +27,7 @@ describe("Automation Proyect", () => {
             cy.get("#about_sidebar_link").click()
             cy.url("https://saucelabs.com/").should("exist")
             cy.origin('https://saucelabs.com/', () => {
-                cy.get('#__next').should('contain.text', 'The world relies on your code. Test on thousands of device, browser, and OS configurations – anywhere, any time.') // now succeeds!
+                cy.get('#__next').should('contain.text', 'The world relies on your code. Test on thousands of device, browser, and OS configurations – anywhere, any time.') 
               })
         })
         it("Logout Option", () => {
