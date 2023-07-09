@@ -21,7 +21,7 @@ class homePage{
         this.elements.AlertMessage()
     }
     TypeEmail(email){
-        this.elements.EmailInput(email).type(email)
+        this.elements.EmailInput().type(email)
     }
 
 }

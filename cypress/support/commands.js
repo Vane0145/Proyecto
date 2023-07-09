@@ -28,4 +28,11 @@ Cypress.Commands.add("getByData", (selector) => {
     return cy.get(`[data-test=${selector}]`)
   })
 
+Cypress.Commands.add("typeLogin", (username, passsword) =>{
+  cy.get("[data-test=username]").type(username)
+  cy.get("[data-test=password]").type(passsword)
+  cy.get("#login-button").click()
+})
+
+
 
