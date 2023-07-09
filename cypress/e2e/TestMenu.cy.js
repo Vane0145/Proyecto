@@ -1,9 +1,5 @@
 
 
-import homePage from "../pages/homePage"
-
-
-
 describe("Automation Proyect", () => {
     beforeEach(() => {
         cy.intercept('/service-worker.js', {
@@ -11,7 +7,6 @@ describe("Automation Proyect", () => {
         })
         cy.clearAllSessionStorage({ log: true })
         cy.visit('https://www.saucedemo.com')
-        cy.fixture("example").as("data")
         cy.typeLogin("standard_user", "secret_sauce")
 
     })
@@ -36,7 +31,7 @@ describe("Automation Proyect", () => {
                 cy.url("https://www.saucedemo.com/").should("eq", "https://www.saucedemo.com/")
             })
 
-        it("Reset App StateOption", () => {
+        it.only("Reset App State Option", () => {
                 cy.get("[data-test=add-to-cart-sauce-labs-backpack]").click()
                 cy.get("#shopping_cart_container").click()
                 cy.get("#react-burger-menu-btn").click()
@@ -55,8 +50,6 @@ describe("Automation Proyect", () => {
             cy.get(".bm-burger-button").should("exist")
 
         })
-
- 
 
         })
 
