@@ -18,10 +18,11 @@ describe("Automation Proyect", () => {
             cy.location("pathname").should("eq", "/inventory.html")
         })
 
-        it("About Option", () => {
+        it.only("About Option", () => {
             cy.get("#react-burger-menu-btn").click()
             cy.get("#about_sidebar_link").click()
             cy.url("https://saucelabs.com/").should("exist")
+            cy.url(".MuiBox-root css-lwb5go").should("exist")
     
             })
             

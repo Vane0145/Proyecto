@@ -6,6 +6,7 @@ class homePage{
         LoginBtn :() => cy.getByData("login-button"),
         ErrorMessage :() => cy.getByData("error"),
         
+        
          
     }
     TypeEmailInput(){
