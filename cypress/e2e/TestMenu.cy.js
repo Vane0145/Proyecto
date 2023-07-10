@@ -31,14 +31,14 @@ describe("Automation Proyect", () => {
                 cy.url("https://www.saucedemo.com/").should("eq", "https://www.saucedemo.com/")
             })
 
-        it.only("Reset App State Option", () => {
+        it("Reset App State Option", () => {
                 cy.get("[data-test=add-to-cart-sauce-labs-backpack]").click()
                 cy.get("#shopping_cart_container").click()
                 cy.get("#react-burger-menu-btn").click()
                 cy.get("#reset_sidebar_link").click()
                 cy.get("#shopping_cart_container").click()
-                cy.get("#shopping_cart_container").its("length").should("eq", 1)
                 cy.get("#react-burger-cross-btn").click()
+                cy.get(".cart_item").should("not.exist")
                 cy.get("[data-test=continue-shopping]").click()
                 cy.location("pathname").should("eq", "/inventory.html")
 
